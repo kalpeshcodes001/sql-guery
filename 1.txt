@@ -1,0 +1,17 @@
+insert into stud values(1,'vishal',2131231323,3,'B',90);
+
+
+insert into stud values(2,'parth',2131231323,3,'A',54);
+
+insert into stud values(3,'smit',2131231323,3,'B',95);
+
+insert into stud values(4,'nilesh',2131231323,3,'A',81);
+
+
+insert into stud values(5,'yash',2131231323,3,'B',70);
+
+insert into stud values(6,'bhautik',2131231323,3,'A',60);
+
+insert into stud values(7,'dhnraj',2131231323,3,'B',100);
+
+insert into stud values(,'prince',2131231323,3,'A',90);

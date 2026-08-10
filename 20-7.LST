@@ -1,0 +1,236 @@
+create table employ(Emp_id  number(2) , Emp_name varchar2(15), Post  varchar(10) ,
+  2  Mgr_id  number(5),  Hire_date number(8) , Salary number(5) ,
+  3  Commission number(4), Dept_id number(2));
+
+Table created.
+
+SQL> desc employ;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(15)
+ POST                                               VARCHAR2(10)
+ MGR_ID                                             NUMBER(5)
+ HIRE_DATE                                          NUMBER(8)
+ SALARY                                             NUMBER(5)
+ COMMISSION                                         NUMBER(4)
+ DEPT_ID                                            NUMBER(2)
+
+SQL> insert into stud(1,'BansiPadia' , 'Clerk', -,18-11-1990 ,15000,-, 10);
+insert into stud(1,'BansiPadia' , 'Clerk', -,18-11-1990 ,15000,-, 10)
+                 *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', -,18-11-1990 ,15000,-, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', -,18-11-1990 ,15000,-, 10)
+                                                   *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', 0,18-11-1990 ,15000,0, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', 0,18-11-1990 ,15000,0, 10)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', 0,to_date('18-11-1990') ,15000,0, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', 0,to_date('18-11-1990') ,15000,0, 10)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+  2  VALUES (1, 'BansiPadia', 'Clerk', 0,
+  3          TO_DATE('18-11-1990', 'DD-MM-YYYY'),
+  4          15000, 10);
+INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+                                                         *
+ERROR at line 1:
+ORA-00904: "DEPTNO": invalid identifier 
+
+
+SQL> INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+  2  VALUES (1, 'BansiPadia', 'Clerk', 0,
+  3          TO_DATE('18-11-1990', 'DD-MM-YYYY'),
+  4          15000, 10);
+INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+                                                         *
+ERROR at line 1:
+ORA-00904: "DEPTNO": invalid identifier 
+
+
+SQL> INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+  2  VALUES (1, 'BansiPadia', 'Clerk', 0,
+  3          TO_DATE('18-11-1990', 'DD-MM-YYYY'),
+  4          15000, 10);
+INSERT INTO stud (empno, ename, job, mgr, hiredate, sal, deptno)
+                                                         *
+ERROR at line 1:
+ORA-00904: "DEPTNO": invalid identifier 
+
+
+SQL> 
+SQL> INSERT INTO stud (emp_no, emp_name, post, mgr_id, hiredate, salary, dept_id)
+  2  VALUES (1, 'BansiPadia', 'Clerk', 0,
+  3          TO_DATE('18-11-1990', 'DD-MM-YYYY'),
+  4          15000, 10);
+INSERT INTO stud (emp_no, emp_name, post, mgr_id, hiredate, salary, dept_id)
+                                                                    *
+ERROR at line 1:
+ORA-00904: "DEPT_ID": invalid identifier 
+
+
+SQL> 
+SQL> 
+SQL> INSERT INTO stud (emp_no, emp_name, post, mgr_id, hiredate, salary, Dept_id)
+  2  VALUES (1, 'BansiPadia', 'Clerk', 0,
+  3          TO_DATE('18-11-1990', 'DD-MM-YYYY'),
+  4          15000, 10);
+INSERT INTO stud (emp_no, emp_name, post, mgr_id, hiredate, salary, Dept_id)
+                                                                    *
+ERROR at line 1:
+ORA-00904: "DEPT_ID": invalid identifier 
+
+
+SQL> clear screen;
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', '18-11-1990' ,15000,0, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', '18-11-1990' ,15000,0, 10)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', '18-11-1990' ,15000,'',10);
+insert into stud values(1,'BansiPadia' , 'Clerk', '18-11-1990' ,15000,'',10)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', '11-18-1990' ,15000,, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', '11-18-1990' ,15000,, 10)
+                                                                      *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> 
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk', '1990-11-18-' ,15000,, 10);
+insert into stud values(1,'BansiPadia' , 'Clerk', '1990-11-18-' ,15000,, 10)
+                                                                       *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> 
+SQL> 
+SQL> insert into stud values(1,'BansiPadia' , 'Clerk',date '1990-11-18' ,15000,' ', 10);
+insert into stud values(1,'BansiPadia' , 'Clerk',date '1990-11-18' ,15000,' ', 10)
+            *
+ERROR at line 1:
+ORA-00913: too many values 
+
+
+SQL> insert into employ values
+  2  
+SQL> clear screen;
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',date '1990-11-18' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',date '1990-11-18' ,15000,' ', 10)
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> desc employ;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_ID                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(15)
+ POST                                               VARCHAR2(10)
+ MGR_ID                                             NUMBER(5)
+ HIRE_DATE                                          NUMBER(8)
+ SALARY                                             NUMBER(5)
+ COMMISSION                                         NUMBER(4)
+ DEPT_ID                                            NUMBER(2)
+
+SQL> 
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk','1990-11-18' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk','1990-11-18' ,15000,' ', 10)
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ',1990-11-18' ,15000,' ', 10);
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ','1990-11-18' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',' ','1990-11-18' ,15000,' ', 10)
+                                                   *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ','19-11-1990' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',' ','19-11-1990' ,15000,' ', 10)
+                                                   *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> 
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'19-11-1990' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'19-11-1990' ,15000,' ', 10)
+                                                           *
+ERROR at line 1:
+ORA-01847: day of month must be between 1 and last day of month 
+
+
+SQL> 
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10)
+                                                       *
+ERROR at line 1:
+ORA-00932: inconsistent datatypes: expected NUMBER got DATE 
+
+
+SQL> clear screen;
+SQL> drop employ;
+drop employ
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> drop table employ;
+
+Table dropped.
+
+SQL> create table employ (Emp_id  number(5) , Emp_name varchar2(15), Post  varchar(10) ,
+  2  Mgr_id  number(5),  Hire_date varchar(12) , Salary number(5) ,
+  3  Commission number(4), Dept_id number(2));
+
+Table created.
+
+SQL> insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10);
+insert into employ values(1,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10)
+                                                   *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> insert into employ values(12345,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10);
+insert into employ values(12345,'BansiPadia' , 'Clerk',' ',date'1990-11-19' ,15000,' ', 10)
+                                                       *
+ERROR at line 1:
+ORA-01722: invalid number 
+
+
+SQL> 

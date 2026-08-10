@@ -1,0 +1,13 @@
+get C:\kalpesh\27-7-26.LST
+SP2-0223: No lines in SQL buffer.
+SQL> CREATE TABLE new_table AS
+  2  SELECT *
+  3  FROM old_table
+  4  WHERE 1 = 2;
+FROM old_table
+     *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> 

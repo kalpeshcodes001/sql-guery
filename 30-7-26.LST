@@ -1,0 +1,75 @@
+SELECT *
+  2  FROM emp1 e
+  3  LEFT OUTER JOIN department d
+  4  ON e.dept = d.dept_no;
+ON e.dept = d.dept_no
+   *
+ERROR at line 4:
+ORA-00904: "E"."DEPT": invalid identifier 
+
+
+SQL> SELECT e.empno,
+  2         e.ename,
+  3         e.job,
+  4         e.deptno,
+  5         d.deptno,
+  6         d.depart_name
+  7  FROM emp1 e
+  8  LEFT OUTER JOIN department d
+  9  ON e.deptno = d.deptno;
+ON e.deptno = d.deptno
+              *
+ERROR at line 9:
+ORA-00904: "D"."DEPTNO": invalid identifier 
+
+
+SQL> SELECT e.empno,
+  2         e.ename,
+  3         e.job,
+  4         e.deptno,
+  5         d.deptno,
+  6         d.dname
+  7  FROM emp1 e
+  8  LEFT OUTER JOIN department d
+  9  ON e.deptno = d.deptno;
+ON e.deptno = d.deptno
+              *
+ERROR at line 9:
+ORA-00904: "D"."DEPTNO": invalid identifier 
+
+
+SQL> SELECT e.empno,
+  2         e.ename,
+  3         e.job,
+  4         e.deptno,
+  5         d.dept_no,
+  6         d.dname
+  7  FROM emp1 e
+  8  LEFT OUTER JOIN department d
+  9  ON e.deptno = d.dept_no;
+ON e.deptno = d.dept_no
+   *
+ERROR at line 9:
+ORA-00904: "E"."DEPTNO": invalid identifier 
+
+
+SQL> SELECT * FROM emp1;
+
+no rows selected
+
+SQL> SELECT * from emp e.empno,
+  2         e.ename,
+  3         e.job,
+  4         e.deptno,
+  5         d.deptno,
+  6         d.depart_name
+  7  FROM emp1 e
+  8  LEFT OUTER JOIN department d
+  9  ON e.deptno = d.deptno;
+SELECT * from emp e.empno,
+                   *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> 
