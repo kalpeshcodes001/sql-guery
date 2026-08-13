@@ -1,0 +1,108 @@
+dinsert into employee2 values ('13654','parth vasoya','anylyst','12675','27-12-1995','90000','','10');
+
+
+github==kachakalpesh0@gmail.com
+
+
+(11) Create a following tables and solve the given query.
+Table :Student_Master - Sno (Primary key), sname, c_code (Foreign key), city, age
+Table :Fee_Master - Sno (Foreign key), fee
+Table :Course_master - C_code (Primary key), c_name
+
+ii. List out all the students whose city either Jamnagar, Rajkot or Surat.
+iii. Display the students’ course wise.
+iv. Display all students name, course name and students age who having age greater
+than 23 and less than 27 and doing ‘BCA’.
+
+-->CREATE TABLE Course_Master
+    (
+    c_code INT PRIMARY KEY,
+    c_name VARCHAR(6)
+    );
+
+->INSERT INTO Course_Master (c_code, c_name) VALUES (1, 'BCA');
+
+INSERT INTO Course_Master (c_code, c_name) VALUES (2, 'BBA');
+
+INSERT INTO Course_Master (c_code, c_name) VALUES (3, 'B.Com');
+
+INSERT INTO Course_Master (c_code, c_name) VALUES (4, 'MCA');
+
+
+-->CREATE TABLE Student_Master (
+    Sno INT PRIMARY KEY,
+    sname VARCHAR(50),
+    c_code INT,
+    city VARCHAR(50),
+    age INT,
+    FOREIGN KEY (c_code) REFERENCES Course_Master(c_code)
+);
+
+=>  ALL
+  
+SELECT constraint_name,
+       constraint_type,
+       r_constraint_name
+FROM user_constraints
+WHERE table_name = 'STUDENT_MASTER';
+
+
+
+
+
+
+
+  INSERT  INTO Student_Master VALUES (1, 'Hiren', 2, 'Jamnagar', 22);    
+
+  INSERT  INTO Student_Master VALUES (2, 'Parth', 2, 'Jamnagar', 22);
+
+  INSERT  INTO Student_Master VALUES (3, 'Smit', 1, 'Surat', 26);
+
+  INSERT  INTO Student_Master VALUES (4, 'Nilesh', 3, 'Rajkot', 24);
+
+  INSERT  INTO Student_Master VALUES (5, 'Karan', 4, 'Ahmedabad', 28);
+
+  INSERT  INTO Student_Master VALUES (6, 'Yash', 1, 'Jamnagar', 25);
+
+  INSERT  INTO Student_Master VALUES (7, 'Raj', 2, 'Surat', 21);
+
+
+
+
+SELECT * FROM dual;
+
+-->CREATE TABLE Fee_Master (
+    Sno INT,
+    fee DECIMAL(10,2),
+    FOREIGN KEY (Sno) REFERENCES Student_Master(Sno)
+);
+
+i. Display all the students whose fees is not pay.
+=
+
+
+
+= drop column:
+	alter table student_course drop 
+
+
+
+
+
+
+
+
+(12) Create tables as per following and solve the queries.
+Table: Emp_mast - Emp_no(pk), emp_name, dept_code (fk), desi
+Table: Dept_mast - Dept_no(pk), dept_name
+Table: Salary_mast - Emp_no(fk), sal, hra, ma, pf
+i. Create a query to display all the employee name, department name and total salary i.esal
++ hra + ma – pf, who are having salary more than 2000 and less than 5000.
+ii. Create a update query to fill hra = 100 if a employee is having salary more than 2000 else
+fill hra = 200.
+iii. Delete all the employee information from emp_mast who are having department
+
+
+
+
+
